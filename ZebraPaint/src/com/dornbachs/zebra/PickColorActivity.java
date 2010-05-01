@@ -22,15 +22,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class PickColorActivity
-	extends ZebraActivity
-	implements View.OnClickListener {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class PickColorActivity extends ZebraActivity implements
+		View.OnClickListener {
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
 		// Apparently this cannot be set from the style.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
-                WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
+				WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 
 		setContentView(R.layout.pick_color);
 
@@ -38,9 +37,9 @@ public class PickColorActivity
 		findAllColorButtons(colorButtons);
 		for (int i = 0; i < colorButtons.size(); i++)
 			colorButtons.elementAt(i).setOnClickListener(this);
-			
+
 	}
-    
+
 	public void onClick(View view) {
 		if (view instanceof ColorButton) {
 			ColorButton button = (ColorButton) view;

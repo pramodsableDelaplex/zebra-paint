@@ -23,10 +23,7 @@ import android.view.View;
 
 // A button that is proportional to the screen size.
 public class ZebraButton extends View {
-	public ZebraButton(
-			Context context,
-			AttributeSet attrs,
-			int defStyle) {
+	public ZebraButton(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		setClickable(true);
 	}
@@ -48,35 +45,34 @@ public class ZebraButton extends View {
 	}
 
 	@Override
-  	public boolean onTouchEvent(MotionEvent e) {
-  		_touchPushed = isPushed(e, _touchPushed);
+	public boolean onTouchEvent(MotionEvent e) {
+		_touchPushed = isPushed(e, _touchPushed);
 		return super.onTouchEvent(e);
-   	}
-  	
-  	public boolean isPushedDown() {
-  		return _touchPushed;
-  	}
+	}
+
+	public boolean isPushedDown() {
+		return _touchPushed;
+	}
 
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		setMeasuredDimension(
-				measureWidth(widthMeasureSpec),
+		setMeasuredDimension(measureWidth(widthMeasureSpec),
 				measureHeight(heightMeasureSpec));
 	}
 
-    private boolean isPushed(MotionEvent e, boolean original) {
-   		switch (e.getAction()) {
-   		case MotionEvent.ACTION_DOWN:
-   			invalidate();
-   			return true;
-   		case MotionEvent.ACTION_UP:
-   			invalidate();
-   			return false;
+	private boolean isPushed(MotionEvent e, boolean original) {
+		switch (e.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			invalidate();
+			return true;
+		case MotionEvent.ACTION_UP:
+			invalidate();
+			return false;
 		default:
 			return original;
-   		}
-    }
-    
+		}
+	}
+
 	private int measureWidth(int measureSpec) {
 		return getMeasurement(measureSpec, getPreferredWidth());
 	}

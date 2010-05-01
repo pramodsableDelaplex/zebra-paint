@@ -26,20 +26,18 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 
 public class ZebraActivity extends Activity {
-	public static final String INTENT_START_NEW = 
-		"com.dornbachs.zebra.paint.START_NEW";
-	public static final String INTENT_PICK_COLOR = 
-		"com.dornbachs.zebra.paint.PICK_COLOR";
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	public static final String INTENT_START_NEW = "com.dornbachs.zebra.paint.START_NEW";
+	public static final String INTENT_PICK_COLOR = "com.dornbachs.zebra.paint.PICK_COLOR";
 
-    	WindowManager w = getWindowManager();
-        Display d = w.getDefaultDisplay();
-        _displayWidth = d.getWidth();
-        _displayHeight = d.getHeight();     	
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		WindowManager w = getWindowManager();
+		Display d = w.getDefaultDisplay();
+		_displayWidth = d.getWidth();
+		_displayHeight = d.getHeight();
+	}
 
 	public static int getDisplayWitdh() {
 		return _displayWidth;
@@ -50,21 +48,21 @@ public class ZebraActivity extends Activity {
 	}
 
 	protected void findAllColorButtons(List<ColorButton> result) {
-		findAllColorButtons((ViewGroup)getWindow().getDecorView(), result);
+		findAllColorButtons((ViewGroup) getWindow().getDecorView(), result);
 	}
-	
-    protected void findAllColorButtons(ViewGroup g, List<ColorButton> result) {
-    	for (int i = 0; i < g.getChildCount(); i++) {
-    		View v = g.getChildAt(i);
-    		if (v instanceof ViewGroup) {
-    			findAllColorButtons((ViewGroup)v, result);
-    		}
-    		if (v instanceof ColorButton) {
-    			result.add((ColorButton)v);
-    		}
-    	}
-    }
-    
+
+	protected void findAllColorButtons(ViewGroup g, List<ColorButton> result) {
+		for (int i = 0; i < g.getChildCount(); i++) {
+			View v = g.getChildAt(i);
+			if (v instanceof ViewGroup) {
+				findAllColorButtons((ViewGroup) v, result);
+			}
+			if (v instanceof ColorButton) {
+				result.add((ColorButton) v);
+			}
+		}
+	}
+
 	protected static int _displayWidth;
 	protected static int _displayHeight;
 }
