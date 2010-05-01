@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2010 Peter Dornbach.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+--> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:zebra="http://schemas.android.com/apk/res/com.dornbachs.zebra"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+              
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	             android:layout_width="fill_parent"
+	             android:layout_height="wrap_content"
+	             android:layout_centerInParent="true">
+	
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#8B0000"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FF0000"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FA8072"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFC0CB"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFDEAD"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#F4A460"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#D2691E"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#8B4513"/>
+	    </TableRow>
+	
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#800080"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#C71585"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FF1493"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FF69B4"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFFF00"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFD700"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFA500"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FF4500"/>
+	    </TableRow>
+	
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#4B0082"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#9400D3"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FF00FF"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#EE82EE"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#F0E68C"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#BDB76B"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#808000"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#556B2F"/>
+	    </TableRow>
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#483D8B"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#6A5ACD"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#4682B4"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#B0C4DE"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#98FB98"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#32CD32"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#228B22"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#006400"/>
+	    </TableRow>
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#000080"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#0000FF"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#00BFFF"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#87CEEB"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#ADFF2F"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#00FF00"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#708090"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#2F4F4F"/>
+	    </TableRow>
+	    <TableRow>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#008080"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#00CED1"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#00FFFF"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#7FFFD4"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#808080"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#C0C0C0"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#DCDCDC"/>
+	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+	                                         android:layout_height="wrap_content"
+	                                         zebra:color="#FFFFFF"/>
+	    </TableRow>
+	
+	</TableLayout>
+</RelativeLayout>   
