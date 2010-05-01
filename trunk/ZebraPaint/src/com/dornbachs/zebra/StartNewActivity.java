@@ -32,33 +32,31 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class StartNewActivity
-		extends Activity
-		implements View.OnClickListener {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+public class StartNewActivity extends Activity implements View.OnClickListener {
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
 		// Apparently this cannot be set from the style.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
-                WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
+				WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
 
 		setContentView(R.layout.start_new);
-		
+
 		GridView gridview = (GridView) findViewById(R.id.start_new_grid);
-	    gridview.setAdapter(new ImageAdapter(this));
+		gridview.setAdapter(new ImageAdapter(this));
 	}
-    
+
 	public void onClick(View view) {
 		setResult(view.getId());
-    	finish();
+		finish();
 	}
-	
+
 	private class ImageAdapter extends BaseAdapter {
 		ImageAdapter(Context c) {
 			_context = c;
 			loadResourceIds();
 		}
-		
+
 		public int getCount() {
 			return _thumbIds.length;
 		}
@@ -72,26 +70,26 @@ public class StartNewActivity
 		}
 
 		public View getView(int position, View convertView, ViewGroup parent) {
-	        ImageView imageView;
-	        if (convertView == null) {  // if it's not recycled, initialize some attributes
-	            imageView = new ImageView(_context);
-	            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-	            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-	            imageView.setPadding(8, 8, 8, 8);
-	            imageView.setOnClickListener(StartNewActivity.this);
-	        } else {
-	            imageView = (ImageView) convertView;
-	        }
+			ImageView imageView;
+			if (convertView == null) { // if it's not recycled, initialize some attributes
+				imageView = new ImageView(_context);
+				imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+				imageView.setPadding(8, 8, 8, 8);
+				imageView.setOnClickListener(StartNewActivity.this);
+			} else {
+				imageView = (ImageView) convertView;
+			}
 
-	        imageView.setImageResource(_thumbIds[position]);
-	        imageView.setId(_outlineIds[position]);
-	        return imageView;
+			imageView.setImageResource(_thumbIds[position]);
+			imageView.setId(_outlineIds[position]);
+			return imageView;
 		}
-		
+
 		public int getOutlineId(int position) {
 			return _outlineIds[position];
 		}
-		
+
 		private void loadResourceIds() {
 			// Use reflection to list resource ids of thumbnails and outline
 			// images.First, we list all the drawables starting with the proper
@@ -108,8 +106,8 @@ public class StartNewActivity
 					if (name.startsWith(PREFIX_THUMB))
 						thumbMap.put(name.substring(PREFIX_THUMB.length()),
 								drawables[i].getInt(null));
+				} catch (IllegalAccessException e) {
 				}
-				catch (IllegalAccessException e) { } 
 			}
 			Set<String> keys = outlineMap.keySet();
 			keys.retainAll(thumbMap.keySet());
@@ -127,7 +125,7 @@ public class StartNewActivity
 
 		private static final String PREFIX_OUTLINE = "outline";
 		private static final String PREFIX_THUMB = "thumb";
-		
+
 		private Context _context;
 		private Integer[] _thumbIds;
 		private Integer[] _outlineIds;
