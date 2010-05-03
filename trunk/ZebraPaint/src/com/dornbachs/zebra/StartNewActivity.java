@@ -146,10 +146,6 @@ public class StartNewActivity extends Activity implements View.OnClickListener {
 			return imageView;
 		}
 
-		public int getOutlineId(int position) {
-			return _resourceLoader.getOutlineIds()[position];
-		}
-
 		private Context _context;
 		private ResourceLoader _resourceLoader;
 	}
