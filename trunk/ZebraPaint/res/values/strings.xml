@@ -16,4 +16,13 @@
 --> 
 <resources>
     <string name="app_name">Zebra Paint</string>
+
+    <string name="menu_new">New</string>
+    <string name="menu_save">Save</string>
+
+    <string name="dialog_saving">Saving to Pictures... </string>
+    <string name="dialog_saving_ok">OK!</string>
+    <string name="dialog_saving_error">Error!</string>
+
+    <string name="saved_image_path_prefix">/dcim/Zebra Paint/Z</string>
 </resources>
