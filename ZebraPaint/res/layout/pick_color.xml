@@ -170,18 +170,18 @@
 	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
 	                                         android:layout_height="wrap_content"
 	                                         zebra:color="#7FFFD4"/>
+            <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             zebra:color="#FFFFFF"/>
+            <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             zebra:color="#C0C0C0"/>
 	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
 	                                         android:layout_height="wrap_content"
 	                                         zebra:color="#808080"/>
-	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
-	                                         android:layout_height="wrap_content"
-	                                         zebra:color="#C0C0C0"/>
-	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
-	                                         android:layout_height="wrap_content"
-	                                         zebra:color="#DCDCDC"/>
-	        <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
-	                                         android:layout_height="wrap_content"
-	                                         zebra:color="#FFFFFF"/>
+            <com.dornbachs.zebra.ColorButton android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             zebra:color="#404040"/>
 	    </TableRow>
 	
 	</TableLayout>

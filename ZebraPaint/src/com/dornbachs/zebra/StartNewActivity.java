@@ -19,6 +19,7 @@ package com.dornbachs.zebra;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -33,6 +34,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 public class StartNewActivity extends Activity implements View.OnClickListener {
+	// This is an expensive operation.
+	public static int randomOutlineId() {
+		return new ResourceLoader().randomOutlineId();
+	}
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -51,46 +57,8 @@ public class StartNewActivity extends Activity implements View.OnClickListener {
 		finish();
 	}
 
-	private class ImageAdapter extends BaseAdapter {
-		ImageAdapter(Context c) {
-			_context = c;
-			loadResourceIds();
-		}
-
-		public int getCount() {
-			return _thumbIds.length;
-		}
-
-		public Object getItem(int i) {
-			return null;
-		}
-
-		public long getItemId(int i) {
-			return 0;
-		}
-
-		public View getView(int position, View convertView, ViewGroup parent) {
-			ImageView imageView;
-			if (convertView == null) { // if it's not recycled, initialize some attributes
-				imageView = new ImageView(_context);
-				imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-				imageView.setPadding(8, 8, 8, 8);
-				imageView.setOnClickListener(StartNewActivity.this);
-			} else {
-				imageView = (ImageView) convertView;
-			}
-
-			imageView.setImageResource(_thumbIds[position]);
-			imageView.setId(_outlineIds[position]);
-			return imageView;
-		}
-
-		public int getOutlineId(int position) {
-			return _outlineIds[position];
-		}
-
-		private void loadResourceIds() {
+	private static class ResourceLoader {
+		ResourceLoader() {
 			// Use reflection to list resource ids of thumbnails and outline
 			// images.First, we list all the drawables starting with the proper
 			// prefixes into 2 maps.
@@ -123,11 +91,66 @@ public class StartNewActivity extends Activity implements View.OnClickListener {
 			}
 		}
 
+		public Integer[] getThumbIds() {
+			return _thumbIds;
+		}
+
+		public Integer[] getOutlineIds() {
+			return _outlineIds;
+		}
+
+		public int randomOutlineId() {
+			return _outlineIds[new Random().nextInt(_outlineIds.length)];
+		}
+
 		private static final String PREFIX_OUTLINE = "outline";
 		private static final String PREFIX_THUMB = "thumb";
 
-		private Context _context;
 		private Integer[] _thumbIds;
 		private Integer[] _outlineIds;
+	}
+
+	private class ImageAdapter extends BaseAdapter {
+		ImageAdapter(Context c) {
+			_context = c;
+			_resourceLoader = new ResourceLoader();
+		}
+
+		public int getCount() {
+			return _resourceLoader.getThumbIds().length;
+		}
+
+		public Object getItem(int i) {
+			return null;
+		}
+
+		public long getItemId(int i) {
+			return 0;
+		}
+
+		public View getView(int position, View convertView, ViewGroup parent) {
+			ImageView imageView;
+			if (convertView == null) {
+				// If it's not recycled, initialize some attributes
+				imageView = new ImageView(_context);
+				imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+				imageView.setPadding(8, 8, 8, 8);
+				imageView.setOnClickListener(StartNewActivity.this);
+			} else {
+				imageView = (ImageView) convertView;
+			}
+
+			imageView.setImageResource(_resourceLoader.getThumbIds()[position]);
+			imageView.setId(_resourceLoader.getOutlineIds()[position]);
+			return imageView;
+		}
+
+		public int getOutlineId(int position) {
+			return _resourceLoader.getOutlineIds()[position];
+		}
+
+		private Context _context;
+		private ResourceLoader _resourceLoader;
 	}
 }
